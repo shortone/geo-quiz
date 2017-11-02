@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ch.dictive.labs.geoquiz.activities.QuizActivity">
+
+    <TextView
+        android:id="@+id/mQuestionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        app:layout_constraintBottom_toTopOf="@id/guideline"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:text="Question"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/answer_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/mTrueButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/true_button"
+            app:layout_constraintRight_toLeftOf="@id/vertical_guideline" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/mFalseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/false_button"
+            app:layout_constraintLeft_toRightOf="@id/vertical_guideline" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/vertical_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/cheatButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cheat_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/answer_buttons" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cheatButton">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/mPreviousButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/previous_button"
+            app:layout_constraintRight_toLeftOf="@id/vertical_navigation_guideline"
+            android:drawableLeft="@drawable/ic_chevron_left_black_24dp"
+            android:drawableStart="@drawable/ic_chevron_left_black_24dp" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/mNextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_button"
+            app:layout_constraintLeft_toRightOf="@id/vertical_navigation_guideline"
+            android:drawableRight="@drawable/ic_chevron_right_black_24dp"
+            android:drawableEnd="@drawable/ic_chevron_right_black_24dp" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/vertical_navigation_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+</android.support.constraint.ConstraintLayout>
